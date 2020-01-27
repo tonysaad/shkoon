@@ -1,51 +1,80 @@
 * {
-	box-sizing: border-box;
-	outline: none;
+  box-sizing: border-box;
+  outline: none;
 }
 
 body {
-	direction: ltr;
-	background-image: url('../img/bg.jpg');
-	@include BGFull;
+  direction: ltr;
+  background-image: url("../img/bg.jpg");
+  @include BGFull;
 }
 
 body,
 html {
-	background-color: #000;
-	font: 400 14px/1 'Lato', sans-serif;
-	color: $White;
+  background-color: #000;
+  font: 400 14px/1 "Lato", sans-serif;
+  color: $White;
 }
 
 a {
-	text-decoration: none;
-	cursor: pointer;
-	color: inherit;
-	&:not([role="button"]):hover {
-		text-decoration: underline;
-	}
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  &:not([role="button"]):hover {
+    text-decoration: underline;
+  }
 }
 
-input[type='submit'],
+input[type="submit"],
 select {
-	cursor: pointer;
+  cursor: pointer;
 }
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 input,
 textarea,
 input.text,
-input[type='text'],
-input[type='button'],
-input[type='submit'],
+input[type="text"],
+input[type="button"],
+input[type="submit"],
 select,
 .input-checkbox,
 button {
-	-webkit-appearance: none;
-	border-radius: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 img {
-	max-width: 100%;
+  max-width: 100%;
+}
+.grid {
+  max-width: 1182px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section{
+	padding: 0 !important;
+}
+
+.texted-content{
+	max-width: 430px;
+	margin: 0 auto;
+	padding: 20px 0;
+	p{
+		font-size: 16px;
+		line-height: 1.8;
+		&+p{
+			margin-top: 20px;
+		}
+	}
+}
+
+.SectionContainer{
+	background-image: url('../img/page-bg.jpg');
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 90vh;
 }

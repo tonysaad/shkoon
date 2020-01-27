@@ -1,0 +1,34 @@
+.page{
+    height: calc(100vh - 140px);
+    padding: 60px 0;
+}
+.home{
+    height: 100%;
+}
+.video{
+    width: calc(100vw - 140px);
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #E6007E;
+    position: relative;
+    overflow: hidden;
+    .bg{
+        // @include PoFull;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .player-icon{
+        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        width: 50px;
+        height: 60px;
+        img{
+            // position: absolute;
+            // width: 100%;
+        }
+    }
+}

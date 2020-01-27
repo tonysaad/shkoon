@@ -1,5 +1,27 @@
 nav{
 	position: fixed;
-	top: 50%;
-	transform: translate(0, -50%);
+	bottom: 0;
+	right: calc(100vw - 160px);
+	// transform: translate(0, -50%);
+	display: flex;
+    flex-direction: column;
+    // height: 100vh;
+    justify-content: space-between;
+    // padding: 120px 0;
+    // max-height: 680px;
+    // height: 100%;
+    height: calc(100vh - 140px);
+	padding: 60px 0;
+	align-items: flex-start;
+	width: 120px;
+	a{
+		font-size: 16px;
+		text-transform: uppercase;
+		padding: 5px;
+		@include transition(all, 0.3s, ease);
+		&.active{
+			padding-left: 20px;
+			border-left: 2px solid;
+		}
+	}
 }

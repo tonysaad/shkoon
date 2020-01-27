@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import logo from "../assets/img/logo.jpg"
+import logo from "../assets/img/logo.jpg";
+import videoThumnail from "../assets/img/intro.jpg";
+import playerIcon from "../assets/img/play-icon.png";
 
 export default class Home extends Component {
     render() {
@@ -22,8 +24,13 @@ export default class Home extends Component {
                 </div>
 
                 <div className="page">
-                    <div className="grid">
-                        
+                    <div className="home">
+                        <div className="video">
+                            <img src={videoThumnail} alt="" className="bg"/>
+                            <button className="player-icon">
+                                <img src={playerIcon} alt="" width="50"/>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

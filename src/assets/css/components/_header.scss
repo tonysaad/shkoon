@@ -1,0 +1,59 @@
+.page-header{
+    // display: flex;
+    .grid{
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        width: calc(100vw - 140px);
+        height: 140px;
+        max-width: 100%;
+    }
+    .logo{
+        display: inline-block;
+        img{
+            display: block;
+        }
+    }
+    .social-media{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        ul{
+            // display: inline;
+            li{
+                display: inline-block;
+                margin-left: 10px;
+            }
+        }
+        &-icon{
+            font-size: 0;
+            display: block;
+            width: 86px;
+            height: 60px;
+            width: 43px;
+            height: 30px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('../img/social-media.png');
+            &.youtube{
+                background-position-x: 0;
+            }
+            &.facebook{
+                background-position-x: -84px;
+                background-position-x: -42px;
+            }
+            &.instagram{
+                background-position-x: -180px;
+                background-position-x: -90px;
+            }
+            &.spotify{
+                background-position-x: -274px;
+                background-position-x: -137px;
+            }
+        }
+    }
+}
