@@ -3,7 +3,7 @@ import React, { Component } from "react"
 export default class Story extends Component {
   render() {
     return (
-      <div>
+      <div className="slide">
         <div className="page">
           <div className="grid">
             <div className="texted-content">

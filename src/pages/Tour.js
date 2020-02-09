@@ -45,7 +45,7 @@ export default class Tour extends Component {
           },
         ]
         return (
-            <div>
+            <div className="slide">
                 <div className="page">
                     <div className="grid">
                         <div className="texted-content">

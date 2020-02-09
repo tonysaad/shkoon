@@ -3,16 +3,11 @@
   outline: none;
 }
 
-body {
-  direction: ltr;
-  background-image: url("../img/bg.jpg");
-  @include BGFull;
-}
+
 
 body,
 html {
-  background-color: #000;
-  font: 400 14px/1 "Lato", sans-serif;
+  font: 400 14px/1 "Akzidenz", sans-serif;
   color: $White;
 }
 
@@ -56,11 +51,14 @@ img {
 }
 
 .section{
-	padding: 0 !important;
+  display: table!important;
+  &:first-child {
+    padding-top: 0!important;
+  }
 }
 
 .texted-content{
-	max-width: 430px;
+	max-width: 50%;
 	margin: 0 auto;
 	padding: 20px 0;
 	p{
@@ -72,9 +70,6 @@ img {
 	}
 }
 
-.SectionContainer{
-	background-image: url('../img/page-bg.jpg');
-	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 0 90vh;
+iframe {
+  margin: 0 auto;
 }

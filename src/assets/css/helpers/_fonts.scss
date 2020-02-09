@@ -1,5 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Cairo|Lato:300,400,700,900&display=swap');
+@font-face {
+    font-family: 'Akzidenz';
+    src: url('/akzidenzgrotesk-light-webfont.woff2') format('woff2'),
+         url('/akzidenzgrotesk-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'SourceCode';
+    src: url('/sourcecodepro-regular-webfont.woff2') format('woff2'),
+         url('/sourcecodepro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 @font-face {
 	font-family: 'Material Icons';
 	font-style: normal;

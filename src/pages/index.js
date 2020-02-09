@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { SectionsContainer, Section, Header } from 'react-fullpage';
 import "../assets/css/main.scss";
 
@@ -13,58 +13,78 @@ import Contact from "./Contact";
 
 let options = {
   sectionClassName:     'section',
-  anchors:              ['section1', 'section2', 'section3','section4','section5','section6'],
-  scrollBar:            false,
-  navigation:           true,
-  verticalAlign:        false,
-  sectionPaddingTop:    '50px',
-  sectionPaddingBottom: '50px',
-  arrowNavigation:      true
+  anchors:              ['/', 'story', 'releases', 'tour','gallery','shop','contacts'],
+  verticalCentered:     true,
+  arrowNavigation:      true,
+  autoScrolling:        true,
+  navigation:           false,
+  sectionPaddingTop:    '60px',
+  sectionPaddingBottom: '60px',
+  scrollOverflow:       true,
+  setFitToSection: true,
+  lockAnchors: true,
+  scrollingSpeed: 1000,
+  slidesNavigation:true
 };
 
-export default () => (
-  <>
-    <Header>
-      <nav>
-        <a href="#section1">Story</a>
-        <a href="#section2">Releases</a>
-        <a href="#section3">Tour</a>
-        <a href="#section4">Gallery</a>
-        <a href="#section5">Shop</a>
-        <a href="#section6">Contact</a>
-      </nav>
-    </Header>
-    <SectionsContainer {...options}>
+export default () => {
+  const [playYoutube, toggleYoutube] = useState(false);
+  const [playSpotify, toggleSpotify] = useState(false);
+  useEffect(() => {
+    window.onhashchange = () => {
+      if (window.location.hash === '#releases'
+      || window.location.hash === '#story'
+      || window.location.hash === '#tour') {
+        document.querySelector('body').classList.add('has-bg')
+      } else {
+        document.querySelector('body').classList.remove('has-bg')
+      }
+    }
+  }, [])
+  return (
+    <>
+      <Header>
+        <nav>
+          <a href="#story">Story</a>
+          <a href="#releases">Releases</a>
+          <a href="#tour">Tour</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#shop">Shop</a>
+          <a href="#contacts">Contact</a>
+        </nav>
+      </Header>
+      <SectionsContainer {...options}>
 
-      <Section>
-        <Home/>
-      </Section>
+        <Section>
+          <Home playYoutube={playYoutube} toggleYoutube={toggleYoutube} playSpotify={playSpotify} toggleSpotify={toggleSpotify} />
+        </Section>
 
-      <Section>
-        <Story/>
-      </Section>
-      
-      <Section>
-        <Releases/>
-      </Section>
+        <Section>
+          <Story/>
+        </Section>
+        
+        <Section>
+          <Releases playYoutube={playYoutube} toggleYoutube={toggleYoutube} playSpotify={playSpotify} toggleSpotify={toggleSpotify} />
+        </Section>
 
-      <Section>
-        <Tour/>
-      </Section>
+        <Section>
+          <Tour/>
+        </Section>
 
-      <Section>
-        <Gallery/>
-      </Section>
+        <Section>
+          <Gallery/>
+        </Section>
 
-      <Section>
-        <Shop/>
-      </Section>
+        <Section>
+          <Shop/>
+        </Section>
 
-      <Section>
-        <Contact/>
-      </Section>
+        <Section>
+          <Contact/>
+        </Section>
 
-    </SectionsContainer>
+      </SectionsContainer>
 
-  </>
-)
+    </>
+    );
+}
